@@ -12,6 +12,7 @@ from tensorflow.keras.preprocessing import image
 from PIL import Image
 from io import StringIO
 
+
 classes = [
     'Bánh bèo',
     'Bánh bột lọc',
@@ -44,9 +45,6 @@ classes = [
     'Xôi xéo'
 ]
 
-with open('camera.html', 'r') as f:
-    camera_html = f.read()
-
 
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(224, 224))
@@ -60,12 +58,13 @@ def plot_probs(outputs):
     probs = probs.sort_values(ascending=False).reset_index()
     probs.columns = ['Class', 'Probability']
     fig = px.bar(probs, x='Class', y='Probability')
-    fig.update_layout(xaxis_tickangle=-60)
+    fig.update_layout(xaxis_tickangle=-55)
+    fig.update_xaxes(title='')
     st.plotly_chart(fig, use_container_width=True)
 
 
 st.markdown(
-    "<h1 style='text-align: center;'>What is this Vietnamese food?🍜</h1> ",
+    "<h1 style='text-align: center;'>Vietnamese Foods Classification 🍜</h1> ",
     unsafe_allow_html=True
 )
 
@@ -76,34 +75,29 @@ st.markdown(
             src='https://www.google.com/logos/doodles/2020/celebrating-banh-mi-6753651837108330.3-2xa.gif' 
             style='width: 90%;'
         >
-    </center>
+    </center><br/>
     """,
     unsafe_allow_html=True
 )
 
+uploaded_file = st.file_uploader("Choose a file")
 url = st.text_input(
-	'URL: ', 
+	'Image Url: ', 
 	'https://upload.wikimedia.org/wikipedia/commons/5/53/Pho-Beef-Noodles-2008.jpg'
 )
-uploaded_file = st.file_uploader("Choose a file")
-# components.html(camera_html, height=400, scrolling=True)
+st.write('')
+st.write('')
 
-st.markdown(
-    "<h2 style='text-align: center;'>Image📷</h2>",
-    unsafe_allow_html=True
-)
-
-if url:
+if uploaded_file is not None:
+    bytes_data = uploaded_file.read()
+    st.image(bytes_data, use_column_width=True)
+    with open('./test.jpg', 'wb') as f: f.write(bytes_data)
+elif url:
     urllib.request.urlretrieve(url, './test.jpg')
     st.markdown(
         f"<center><img src='{url}' style='width: 90%;'></center>",
         unsafe_allow_html=True
     )
-elif uploaded_file is not None:
-    bytes_data = uploaded_file.read()
-    st.image(bytes_data, use_column_width=True)
-    with open('./test.jpg', 'wb') as f:
-        f.write(bytes_data)
 
 img_test = preprocess_image('./test.jpg')
 model = load_model('model.h5')
@@ -112,7 +106,21 @@ pred_probs = model.predict(img_test)[0]
 index = np.argmax(pred_probs)
 label = classes[index]
 
-st.markdown(f'## {label}')
-st.markdown(f"*Read on [Wikipedia](https://en.wikipedia.org/wiki/{label.replace(' ', '%20')})*")
-st.markdown(f'**Probability:** {pred_probs[index] * 100:.2f}%')
+st.markdown(
+    f"""
+	    <h2 style='text-align: center;'>
+		    <a 
+			    href='https://en.wikipedia.org/wiki/{label.replace(' ', '%20')}' 
+			    style='text-decoration: none;'
+			    target='_blank'
+		    >
+		    	 {label}
+		    </a>
+		     - {pred_probs[index] * 100:.2f}%
+	    </h2>
+    """,
+    unsafe_allow_html=True
+)
+
 plot_probs(pred_probs)
+st.markdown("[![](https://img.shields.io/badge/GitHub-View_Repository-blue?logo=GitHub)](https://github.com/18520339/vietnamese-foods)")
