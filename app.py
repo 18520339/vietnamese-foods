@@ -100,7 +100,7 @@ elif url:
     )
 
 img_test = preprocess_image('./test.jpg')
-model = load_model('model.h5')
+model = load_model('Model Implement/model.h5')
 pred_probs = model.predict(img_test)[0]
 
 index = np.argmax(pred_probs)
