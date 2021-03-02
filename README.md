@@ -9,7 +9,7 @@
     - Labeling Tools: https://github.com/18520339/vietnamese-foods/tree/main/Google%20Sheets
     - Labeling Implement: https://docs.google.com/spreadsheets/d/1d571y_VE7fiWAJMPktZr24knp4Ca-Tu_udGCIlVbzso
 
-![](https://github.com/18520339/vietnamese-foods/tree/main/Google%20Sheets/demo.png?raw=true)
+![](https://github.com/18520339/vietnamese-foods/blob/main/Google%20Sheets/demo.png?raw=true)
 
 3. Model Implement: https://github.com/18520339/vietnamese-foods/blob/main/Model%20Implement/source.ipynb
 4. Deployment: https://share.streamlit.io/18520339/vietnamese-foods/main/app.py
