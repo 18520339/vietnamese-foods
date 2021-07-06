@@ -124,4 +124,4 @@ st.markdown(
 )
 
 plot_probs(pred_probs)
-st.markdown('[![](https://img.shields.io/badge/GitHub-View_Repository-blue?logo=GitHub)](https://github.com/18520339/vietnamese-foods)')
+st.markdown('[![](https://img.shields.io/badge/GitHub-View_Repository-blue?logo=GitHub)](https://github.com/18520339/30VNFoods)')

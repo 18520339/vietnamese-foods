@@ -12,4 +12,4 @@
     ![](https://github.com/18520339/vietnamese-foods/blob/main/Google%20Sheets/demo.png?raw=true)
 
 3.  Model Implement: https://git.io/Jth2F
-4.  Deployment: https://share.streamlit.io/18520339/vietnamese-foods/main/app.py
+4.  Deployment: https://share.streamlit.io/18520339/30VNFoods/main/app.py
