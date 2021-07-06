@@ -1,5 +1,6 @@
 *.zip
 *.hdf5
+!Model\ Implement/ResNet152V2/fine_tune_model_best.hdf5
 test.py
 secret.ini
 Dataset
