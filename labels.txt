@@ -1,7 +1,7 @@
 Bánh bèo
 Bánh bột lọc
-Bánh canh
 Bánh căn
+Bánh canh
 Bánh chưng
 Bánh cuốn
 Bánh đúc
@@ -24,7 +24,7 @@ Cháo lòng
 Cơm tấm
 Gỏi cuốn
 Hủ tiếu
-Mì quảng
+Mì Quảng
 Nem chua
 Phở
 Xôi xéo
