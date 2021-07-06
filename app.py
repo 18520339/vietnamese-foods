@@ -16,10 +16,11 @@ from io import StringIO
 classes = [
     'Bánh bèo',
     'Bánh bột lọc',
-    'Bánh canh',
     'Bánh căn',
+    'Bánh canh',
     'Bánh chưng',
     'Bánh cuốn',
+    'Bánh đúc',
     'Bánh giò',
     'Bánh khọt',
     'Bánh mì',
@@ -28,18 +29,18 @@ classes = [
     'Bánh tráng nướng',
     'Bánh xèo',
     'Bún bò Huế',
+    'Bún đậu mắm tôm',
     'Bún mắm',
     'Bún riêu',
     'Bún thịt nướng',
-    'Bún đậu mắm tôm',
+    'Cá kho tộ',
     'Canh chua',
     'Cao lầu',
-    'Cá kho tộ',
     'Cháo lòng',
     'Cơm tấm',
     'Gỏi cuốn',
     'Hủ tiếu',
-    'Mì quảng',
+    'Mì Quảng',
     'Nem chua',
     'Phở',
     'Xôi xéo'
@@ -107,18 +108,18 @@ index = np.argmax(pred_probs)
 label = classes[index]
 
 st.markdown(
-    f"""
-	    <h2 style='text-align: center;'>
-		    <a 
-			    href='https://en.wikipedia.org/wiki/{label.replace(' ', '%20')}' 
-			    style='text-decoration: none;'
-			    target='_blank'
-		    >
-		    	 {label}
-		    </a>
-		     - {pred_probs[index] * 100:.2f}%
-	    </h2>
-    """,
+    f'''
+        <h2 style='text-align: center;'>
+            <a 
+                href='https://en.wikipedia.org/wiki/{label.replace(' ', '%20')}' 
+                style='text-decoration: none;'
+                target='_blank'
+            >
+                 {label}
+            </a>
+             - {pred_probs[index] * 100:.2f}%
+        </h2>
+    ''',
     unsafe_allow_html=True
 )
 
