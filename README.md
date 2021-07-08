@@ -12,8 +12,9 @@
     ![](https://github.com/18520339/vietnamese-foods/blob/main/Google%20Sheets/demo.png?raw=true)
 
 3.  Model Implement: https://git.io/Jc1Bi
-4.  Deployment: https://share.streamlit.io/18520339/30VNFoods/main/app.py
-5.  Demo: https://www.youtube.com/watch?v=GV_1TGohFU8
+4.  Model Evaluation: https://git.io/Jc7fL
+5.  Deployment: https://share.streamlit.io/18520339/30VNFoods/main/app.py
+6.  Demo: https://www.youtube.com/watch?v=GV_1TGohFU8
 
 ## License
 
